@@ -16,7 +16,7 @@ func doCalculate(y float64, z string) float64 {
 	case "/":
 		return x / y
 	default:
-		return 0
+		panic("Invalid operator")
 	}
 
 }
@@ -30,5 +30,7 @@ func main() {
 	result = doCalculate(20, "/")
 	fmt.Println(result)
 	result = doCalculate(10, "*")
+	fmt.Println(result)
+	result = doCalculate(10, "@")
 	fmt.Println(result)
 }

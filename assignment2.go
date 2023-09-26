@@ -51,11 +51,11 @@ func getAll() error {
 	if len(data) == 0 {
 		return errors.New("Get-All-Items: No items in map\n")
 	}
-	fmt.Println("Get-All-Items:\n")
+	fmt.Printf("Get-All-Items:\n")
 	for k, v := range data {
 		fmt.Printf("  {Key: %s, Value: %s}\n", k, v)
 	}
-	fmt.Println("\n")
+	fmt.Printf("\n")
 	return nil
 }
 

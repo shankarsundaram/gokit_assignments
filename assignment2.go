@@ -65,7 +65,7 @@ func deleteItem(k string) error {
 	if _, ok := data[k]; !ok {
 		return errors.New("Delete-Item: Item does not exist")
 	}
-	fmt.Printf("Item-Deleted:\n\n  {Key: %s, Value: %s}\n\n", k, data[k])
+	fmt.Printf("Item-Deleted:\n  {Key: %s, Value: %s}\n\n", k, data[k])
 	delete(data, k)
 	return nil
 }

@@ -13,6 +13,7 @@ type CustomerController struct {
 
 }
 
+// Implementation of Create Method of Interface CustomerStore
 func (c CustomerController) Add(cr domain.Customer) {
 	err := c.store.Create(cr)
 	if err != nil {
@@ -22,6 +23,7 @@ func (c CustomerController) Add(cr domain.Customer) {
 	fmt.Println("New Customer has been created")
 }
 
+// Implementation of Update Method of Interface CustomerStore
 func (c CustomerController) Update(s string, cr domain.Customer) {
 	err := c.store.Update(s, cr)
 	if err != nil {
@@ -31,6 +33,7 @@ func (c CustomerController) Update(s string, cr domain.Customer) {
 	fmt.Println("Customer has been Updated")
 }
 
+// Implementation of GetById Method of Interface CustomerStore
 func (c CustomerController) GetById(s string) {
 	result, err := c.store.GetById(s)
 	if err != nil {
@@ -40,6 +43,7 @@ func (c CustomerController) GetById(s string) {
 	fmt.Println("GetById:", result)
 }
 
+// Implementation of Delete Method of Interface CustomerStore
 func (c CustomerController) Delete(s string) {
 	err := c.store.Delete(s)
 	if err != nil {
@@ -49,6 +53,7 @@ func (c CustomerController) Delete(s string) {
 	fmt.Println("Customer has been Deleted")
 }
 
+// Implementation of GetAll Method of Interface CustomerStore
 func (c CustomerController) GetAll() {
 	result, err := c.store.GetAll()
 	if err != nil {
@@ -58,6 +63,7 @@ func (c CustomerController) GetAll() {
 	fmt.Println("GetAll:", result)
 }
 
+// EntryPoint
 func main() {
 	controller := CustomerController{
 		store: mapstore.NewMapStore(), // Inject the dependency

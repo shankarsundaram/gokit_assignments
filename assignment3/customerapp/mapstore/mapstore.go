@@ -23,6 +23,7 @@ func (m *MapStore) Create(customer domain.Customer) error {
 	return nil
 }
 
+// GetById will retrieve the record from mem datastore by using the field Id.
 func (m *MapStore) GetById(s string) (domain.Customer, error) {
 	if _, ok := m.store[s]; !ok {
 		return domain.Customer{}, errors.New("customer record doesn't exists")
@@ -31,6 +32,7 @@ func (m *MapStore) GetById(s string) (domain.Customer, error) {
 	return m.store[s], nil
 }
 
+// Update will update the existing record into mem datastore by using the field Id.
 func (m *MapStore) Update(s string, customer domain.Customer) error {
 	if _, ok := m.store[s]; !ok {
 		return errors.New("customer record doesn't exists")
@@ -40,6 +42,7 @@ func (m *MapStore) Update(s string, customer domain.Customer) error {
 	return nil
 }
 
+// Delete will delete the existing record from mem datastore by using the field Id.
 func (m *MapStore) Delete(s string) error {
 	if _, ok := m.store[s]; !ok {
 		return errors.New("customer record doesn't exists")
@@ -48,6 +51,7 @@ func (m *MapStore) Delete(s string) error {
 	return nil
 }
 
+// GetAll will get all the existing records from mem datastore.
 func (m *MapStore) GetAll() ([]domain.Customer, error) {
 	var customers []domain.Customer
 	for _, customer := range m.store {

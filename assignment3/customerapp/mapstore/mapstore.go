@@ -53,7 +53,7 @@ func (m *MapStore) Delete(s string) error {
 
 // GetAll will get all the existing records from mem datastore.
 func (m *MapStore) GetAll() ([]domain.Customer, error) {
-	var customers []domain.Customer
+	customers := make([]domain.Customer,0,len(m.store))
 	for _, customer := range m.store {
 		customers = append(customers, customer)
 	}

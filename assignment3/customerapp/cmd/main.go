@@ -1,9 +1,10 @@
 package main
 
 import (
+	"fmt"
+
 	"customerapp/domain"
 	"customerapp/mapstore"
-	"fmt"
 )
 
 // CustomerController Organises the CRUD operations at UI layer.

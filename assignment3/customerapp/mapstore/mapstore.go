@@ -1,8 +1,9 @@
 package mapstore
 
 import (
-	"customerapp/domain"
 	"errors"
+
+	"customerapp/domain"
 )
 
 type MapStore struct {
@@ -53,7 +54,7 @@ func (m *MapStore) Delete(s string) error {
 
 // GetAll will get all the existing records from mem datastore.
 func (m *MapStore) GetAll() ([]domain.Customer, error) {
-	customers := make([]domain.Customer,0,len(m.store))
+	customers := make([]domain.Customer, 0, len(m.store))
 	for _, customer := range m.store {
 		customers = append(customers, customer)
 	}

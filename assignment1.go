@@ -2,22 +2,25 @@ package main
 
 import (
 	"fmt"
+	"log"
 )
 
-func doCalculate(y float64, z string) float64 {
-	var x float64
-	switch z {
+var acc float64
+
+func doCalculate(input float64, operat string) float64 {
+	switch operat {
 	case "+":
-		return x + y
+		acc = acc + input
 	case "-":
-		return x - y
+		acc = acc - input
 	case "*":
-		return x * y
+		acc = acc * input
 	case "/":
-		return x / y
+		acc = acc / input
 	default:
-		panic("Invalid operator")
+		log.Println("Invalid operator")
 	}
+	return acc
 
 }
 
